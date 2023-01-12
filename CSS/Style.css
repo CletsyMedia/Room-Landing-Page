@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    transition: .5s linear;
+}
+:root{
+    --Dark-Gray: hsl(0, 0%, 63%);
+    --Black: hsl(0, 0%, 0%);
+    --White: hsl(0, 0%, 100%);
+    --Very-Dark-Gray: hsl(0, 0%, 27%);
+}
+body{
+    font-family: 'League Spartan', sans-serif;
+}
+p{
+    line-height: 1.5;
+    color:var(--Dark-Gray);
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap:2rem;
+    padding:40px 10px;
+    z-index: 1;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5rem;
+    gap:2rem;
+}
+.logo{
+    margin-top:5px;
+    cursor: pointer;
+}
+nav ul{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap:1rem;
+}
+nav ul li a{
+    font-size:20px;
+    color:var(--White);
+}
+.menuClose,
+.hamburger{
+    display: none;
+}
+main{
+    overflow: hidden;
+}
+.heroContainer{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.sliderContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slider{
+    padding: 0;
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    align-items:flex-start;
+}
+.sliderImg1,
+.sliderImg2,
+.sliderImg3{
+    background-image: url(../images/desktop-image-hero-1.jpg);
+    min-height: 70vh;
+    min-width:900px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.sliderImg2{
+    background-image: url(../images/desktop-image-hero-2.jpg);
+}
+.sliderImg3{
+    background-image: url(../images/desktop-image-hero-3.jpg);
+}
+.info{
+    display: flex;
+    align-items:flex-start;
+    justify-content:flex-start;
+    flex-direction: column;
+    background-color: var(--White);
+    color: var(--Very-Dark-Gray);
+    margin: 5rem 4rem;
+    gap:2rem;
+}
+
+.info h2{
+    font-size:2.5rem;
+    color: #000;
+}
+
+.btn{
+    color: var(--Very-Dark-Gray);
+    text-transform: uppercase;
+    letter-spacing:20px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transition: .5s ease;
+}
+.btn i{
+    transition: margin .5s ease;
+}
+.btn:hover i{
+    margin-left: 0.5rem;
+}
+.btn:hover{
+    color: var(--Dark-Gray);
+}
+.sliderBtn{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    cursor: pointer;
+    padding:0;
+    bottom:0;
+    right:28.1rem;
+    color: whitesmoke;
+    font-size:1.5rem;
+}
+.sliderBtn i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:var(--Black);
+    width:85px;
+    height:80px;
+}
+.sliderBtn i:hover{
+    background-color:#717171;
+}
+/* ABout */
+.about{
+    display:flex;
+}
+.aboutInfo{
+    padding: 0 50px;
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap:1rem;
+}
+.aboutDark,
+.aboutLight{
+    background-image: url(../images/image-about-dark.jpg);
+    height: 40vh;
+    min-width:450px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.aboutLight{
+    background-image: url(../images/image-about-light.jpg);
+}
+.aboutInfo h3{
+    color: var(--Black);
+    text-transform: uppercase;
+    letter-spacing:10px;
+    font-weight: bold;
+}
+
+@media(max-width:1224px){
+    .sliderContainer :is(.sliderImg1, .sliderImg2, .sliderImg3){
+        min-width:560px;
+        height: 80vh;
+    }
+    .sliderBtn{
+        right:18.5rem;
+    }.aboutDark, .aboutLight {
+        /* height: 40vh; */
+        min-width:300px;
+    }
+    .aboutInfo{
+        padding:15px  30px;
+    }
+    .aboutInfo h3{
+        font-size: 0.9rem;
+    }
+
+}
+
+@media(max-width:768px){
+    .navbar{
+        margin-left: 1.7rem;
+    }
+    .slider{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .sliderBtn{
+        justify-content:flex-end;
+        right:0;
+        bottom:47.4%;
+    }
+    p{
+        font-size:20px;
+    }
+    .info{
+        padding:1rem 3rem;
+        height:40vh;
+    }
+    .info h2{
+        font-size: 2.3rem;
+    }
+    .about{
+        flex-direction: column;
+    }
+    .aboutInfo{
+        padding: 4rem 2rem;
+    }
+}
+@media(max-width:600px){
+    .activeState{
+        top: 0;
+    }
+    .hamburger,
+    .menuClose{
+        display: block;
+        cursor: pointer;
+    }
+    nav{
+        font-weight: bold;
+        background-color:rgba(0,0,0,0.5);
+        position: absolute;
+        width: 100%;
+        top:-900%;
+        left: 0;
+        height: 100vh;
+    }
+    nav ul li a{
+        color: var(--Black);  
+    }
+    .menuColor{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding:45px 40px;
+        background-color: var(--White);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    .sliderImg1{
+        background-image: url(../images/mobile-image-hero-1.jpg);
+        min-width:300px;
+    }
+    .sliderImg2{
+        background-image: url(../images/mobile-image-hero-2.jpg);
+        min-width:300px;
+    }
+    .sliderImg3{
+        background-image: url(../images/mobile-image-hero-3.jpg);
+        min-width:300px;
+    }
+    .sliderBtn{
+        bottom:35rem;
+    }
+    
+    .info h2{
+        font-size: 2rem;
+    }
+    .info{
+        height:60vh;
+        padding:1rem 2rem;
+    }
+    .aboutInfo h3{
+        font-size: 12px;
+        letter-spacing:5px;
+    }
+    .aboutInfo {
+        padding: 5rem 2rem;
+    }
+}
+@media(max-width:380px){
+    .menuColor{
+        padding: 45px 20px;
+    }
+    .info h2 {
+        font-size:1.5rem;
+    }
+    .btn{
+        letter-spacing: 10px;
+    }
+    .about{
+        padding: 0;
+    }
+    .info {
+        height: 60vh;
+        padding: 1rem 3rem;
+    }
+    .aboutInfo h3 {
+        letter-spacing:7px;
+    }
+}
+@media(max-width:360px){
+    .info h2 {
+        font-size:1.6rem;
+    }
+    .aboutInfo h3 {
+        letter-spacing:4px;
+    }
+}
